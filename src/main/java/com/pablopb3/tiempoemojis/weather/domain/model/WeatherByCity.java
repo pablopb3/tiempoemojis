@@ -12,6 +12,18 @@ public class WeatherByCity {
         this.weatherDescription = weatherDescription;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public Coordinates getCoordinates() {
+        return coordinates;
+    }
+
+    public WeatherDescription getWeatherDescription() {
+        return weatherDescription;
+    }
+
     @Override
     public String toString() {
         return "WeatherByCity{" +

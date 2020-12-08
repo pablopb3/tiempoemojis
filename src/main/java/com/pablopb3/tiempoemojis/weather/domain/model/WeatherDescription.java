@@ -14,6 +14,22 @@ public class WeatherDescription {
         this.snowLevel = snowLevel;
     }
 
+    public Intensity getCloudsLevel() {
+        return cloudsLevel;
+    }
+
+    public boolean isSkyClear() { return cloudsLevel.equals(Intensity.NONE); }
+
+    public boolean isItDay() { return momentOfDay.equals(MomentOfDay.DAY); }
+
+    public boolean isItCloudy() { return !cloudsLevel.equals(Intensity.LOW); }
+
+    public boolean isItRainy() { return rainLevel.equals(Intensity.LOW) || rainLevel.equals(Intensity.MEDIUM); }
+
+    public boolean isStorming() { return rainLevel.equals(Intensity.VERY_HIGH); }
+
+    public boolean isSnowing() { return !snowLevel.equals(Intensity.NONE); }
+
     @Override
     public String toString() {
         return "WeatherDescription{" +
@@ -24,3 +40,5 @@ public class WeatherDescription {
                 '}';
     }
 }
+
+
