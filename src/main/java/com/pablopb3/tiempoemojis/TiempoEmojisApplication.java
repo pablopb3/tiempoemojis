@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TiempoemojisApplication {
+public class TiempoEmojisApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TiempoemojisApplication.class, args);
+		SpringApplication.run(TiempoEmojisApplication.class, args);
 	}
 
 }
