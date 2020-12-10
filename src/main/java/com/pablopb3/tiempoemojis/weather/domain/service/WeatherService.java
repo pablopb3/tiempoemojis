@@ -8,4 +8,5 @@ public interface WeatherService {
 
     List<WeatherByCity> getWeather();
 
+    String replaceCityCodeByWeatherEmoji(String map, List<WeatherByCity> weatherByCity);
 }

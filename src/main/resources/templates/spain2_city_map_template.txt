@@ -1,0 +1,9 @@
+$a-coruna$lugo$oviedo$santander$bilbao$san-sebastian$san-sebastian$san-sebastian$huesca$huesca$huesca$huesca
+$pontevedra$ourense$leon$leon$burgos$logrono$huesca$huesca$girona$girona$girona$girona
+        $zamora$valladolid$soria$soria$zaragoza$lleida$lleida$barcelona$barcelona
+        $salamanca$segovia$madrid$cuenca$teruel$castellon-de-la-plana$castellon-de-la-plana$castellon-de-la-plana
+        $caceres$caceres$toledo$cuenca$valencia$valencia$valencia$valencia        $palma-de-mallorca
+        $badajoz$badajoz$ciudad-real$albacete$alicante$alicante$alicante
+        $huelva$cordoba$jaen$jaen$murcia$murcia$murcia
+        $huelva$sevilla$malaga$granada$almeria$almeria$almeria
+        $malaga$malaga

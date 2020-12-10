@@ -13,6 +13,7 @@ public class ElTiempoPuntoEsMapper {
     public static WeatherByCity map(ElTiempoPuntoEsEntity elTiempo) {
         return new WeatherByCity(
                 elTiempo.getName(),
+                elTiempo.getUrl(),
                 new Coordinates(elTiempo.getLatLng().get(0), elTiempo.getLatLng().get(1)),
                 getWeatherDescritpion(elTiempo.getStatus())
         );
