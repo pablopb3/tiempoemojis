@@ -1,11 +1,11 @@
- a-coruna lugo oviedo oviedo santander bilbao san-sebastian huesca huesca huesca
+ a-coruna lugo oviedo oviedo santander bilbao san-sebastian huesca lleida girona girona
  pontevedra ourense leon leon burgos burgos logrono huesca huesca lleida girona
-           zamora zamora valladolid valladolid soria zaragoza zaragoza lleida
-          salamanca avila segovia madrid guadalajara teruel tarragona tarragona
+          zamora zamora valladolid valladolid soria zaragoza zaragoza barcelona
+          salamanca avila segovia madrid guadalajara teruel tarragona
           caceres caceres toledo madrid cuenca teruel castellon-de-la-plana         palma-de-mallorca
           badajoz badajoz ciudad-real ciudad-real albacete albacete valencia
           badajoz cordoba cordoba jaen jaen murcia
           huelva sevilla cordoba granada almeria
-              cadiz malaga
+               cadiz malaga
 
  santa-cruz-de-tenerife las-palmas-de-gran-canaria

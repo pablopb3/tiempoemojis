@@ -7,6 +7,7 @@ import com.pablopb3.tiempoemojis.weather.infrastructure.twitter.service.TwitterA
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,12 +31,13 @@ public class TweetWeatherMapUseCase {
         this.twitterApiClient = twitterApiClient;
     }
 
+    @Scheduled(cron = "0 0 3,7,11,15,19,23 * * ?")
     public void tweetWeather() throws Exception {
 
         List<WeatherByCity> weatherByCity = weatherService.getWeather();
         String citiesMap = templateReader.readTemplate();
         String weatherMap = weatherService.replaceCityCodeByWeatherEmoji(citiesMap, weatherByCity);
-        log.info("\n" + weatherMap);
+        log.info("let's tweet the weather map: \n" + weatherMap);
         twitterApiClient.tweet(weatherMap);
     }
 
