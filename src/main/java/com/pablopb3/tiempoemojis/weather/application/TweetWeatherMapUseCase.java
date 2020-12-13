@@ -31,7 +31,7 @@ public class TweetWeatherMapUseCase {
         this.twitterApiClient = twitterApiClient;
     }
 
-    @Scheduled(cron = "0 0 3,7,11,15,19,23 * * ?")
+    @Scheduled(cron = "0 0 2,6,10,14,18,22 * * ?")
     public void tweetWeather() throws Exception {
 
         List<WeatherByCity> weatherByCity = weatherService.getWeather();
