@@ -1,17 +1,17 @@
-package com.pablopb3.tiempoemojis.weather.infrastructure.twitter.model;
+package com.pablopb3.tiempoemojis.emoji.domain.model;
 
 public enum WeatherEmoji {
 
     //todo add test to check emojis lenght
-    MOON("\uD83C\uDF19"),
+    MOON("\uD83C\uDF15"),
     SUN("\u2600️"),
     SUN_WITH_SMALL_CLOUD("\uD83C\uDF24"),
     SUN_WITH_MEDIUM_CLOUD("\u26c5"),
     SUN_WITH_BIG_CLOUD("\uD83C\uDF25"),
-    SUN_WITH_BIG_CLOUD_AND_RAIN("️️️\uD83C\uDF26"), //todo this fails
+    SUN_WITH_BIG_CLOUD_AND_RAIN("\uD83C\uDF26️"),
     GREY_CLOUDS("️\u2601"),
     RAINY_CLOUDS("\uD83C\uDF27"),
-    STORMY_CLOUDS("️\uD83C\uDF29️"), //and this
+    STORMY_CLOUDS("️\uD83C\uDF29️"),
     RAINY_STORMY_CLOUDS("\u26c8"),
     SNOWY_CLOUD("\uD83C\uDF28"),
     QUESTION_MARK("❓");

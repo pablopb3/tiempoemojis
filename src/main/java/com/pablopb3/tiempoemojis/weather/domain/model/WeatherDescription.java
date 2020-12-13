@@ -1,5 +1,7 @@
 package com.pablopb3.tiempoemojis.weather.domain.model;
 
+import java.util.Objects;
+
 public class WeatherDescription {
 
     private MomentOfDay momentOfDay;
@@ -22,7 +24,11 @@ public class WeatherDescription {
 
     public boolean isItDay() { return momentOfDay.equals(MomentOfDay.DAY); }
 
-    public boolean isItCloudy() { return !cloudsLevel.equals(Intensity.LOW); }
+    public boolean isItNight() { return !isItDay(); }
+
+    public boolean isItCloudy() { return !cloudsLevel.equals(Intensity.NONE); }
+
+    public boolean isTherePrecipitations() { return isItRainy() || isStorming() || isSnowing(); }
 
     public boolean isItRainy() { return rainLevel.equals(Intensity.LOW) || rainLevel.equals(Intensity.MEDIUM); }
 
@@ -38,6 +44,19 @@ public class WeatherDescription {
                 ", rainLevel=" + rainLevel +
                 ", snowLevel=" + snowLevel +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        WeatherDescription that = (WeatherDescription) o;
+        return momentOfDay == that.momentOfDay && cloudsLevel == that.cloudsLevel && rainLevel == that.rainLevel && snowLevel == that.snowLevel;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(momentOfDay, cloudsLevel, rainLevel, snowLevel);
     }
 }
 

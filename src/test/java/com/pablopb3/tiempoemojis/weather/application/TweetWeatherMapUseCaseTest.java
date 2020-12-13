@@ -24,7 +24,7 @@ class TweetWeatherMapUseCaseTest {
 
     @Test
     void getWeather() throws Exception {
-        tweetWeatherMapUseCase.getWeather();
+        tweetWeatherMapUseCase.tweetWeather();
     }
 
 }

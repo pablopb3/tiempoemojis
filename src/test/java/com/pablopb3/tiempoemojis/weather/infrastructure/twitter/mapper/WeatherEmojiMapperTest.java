@@ -1,14 +1,12 @@
 package com.pablopb3.tiempoemojis.weather.infrastructure.twitter.mapper;
 
+import com.pablopb3.tiempoemojis.emoji.domain.service.mapper.WeatherEmojiMapper;
 import com.pablopb3.tiempoemojis.weather.domain.model.Intensity;
 import com.pablopb3.tiempoemojis.weather.domain.model.MomentOfDay;
 import com.pablopb3.tiempoemojis.weather.domain.model.WeatherDescription;
-import com.pablopb3.tiempoemojis.weather.infrastructure.twitter.model.WeatherEmoji;
+import com.pablopb3.tiempoemojis.emoji.domain.model.WeatherEmoji;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class WeatherEmojiMapperTest {
 

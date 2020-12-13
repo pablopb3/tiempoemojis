@@ -1,6 +1,6 @@
 package com.pablopb3.tiempoemojis.weather.infrastructure.twitter.service;
 
-import com.pablopb3.tiempoemojis.weather.infrastructure.twitter.model.WeatherEmoji;
+import com.pablopb3.tiempoemojis.emoji.domain.model.WeatherEmoji;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import twitter4j.TwitterException;

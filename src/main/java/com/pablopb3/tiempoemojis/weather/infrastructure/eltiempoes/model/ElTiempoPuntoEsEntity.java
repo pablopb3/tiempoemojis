@@ -52,6 +52,14 @@ public class ElTiempoPuntoEsEntity implements Serializable
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
     private final static long serialVersionUID = 324628290329423946L;
 
+    public ElTiempoPuntoEsEntity() {}
+
+    public ElTiempoPuntoEsEntity(List<Double> latLng, String name, String status) {
+        this.latLng = latLng;
+        this.name = name;
+        this.status = status;
+    }
+
     public List<Double> getLatLng() {
         return latLng;
     }

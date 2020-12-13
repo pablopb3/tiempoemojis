@@ -1,11 +1,11 @@
-$a-coruna$lugo$oviedo$santander$bilbao$san-sebastian$san-sebastian$san-sebastian$huesca$huesca$huesca$huesca
-$pontevedra$ourense$leon$leon$burgos$logrono$huesca$huesca$girona$girona$girona$girona
-        $zamora$valladolid$soria$soria$zaragoza$lleida$lleida$barcelona$barcelona
-        $salamanca$segovia$madrid$cuenca$teruel$castellon-de-la-plana$castellon-de-la-plana$castellon-de-la-plana
-        $caceres$caceres$toledo$cuenca$valencia$valencia$valencia$valencia          $palma-de-mallorca
-        $badajoz$badajoz$ciudad-real$albacete$alicante$alicante$alicante
-        $huelva$cordoba$jaen$jaen$murcia$murcia$murcia
-        $huelva$sevilla$malaga$granada$almeria$almeria$almeria
-        $malaga$malaga
+ a-coruna lugo oviedo oviedo santander bilbao san-sebastian huesca huesca huesca
+ pontevedra ourense leon leon burgos burgos logrono huesca huesca lleida girona
+           zamora zamora valladolid valladolid soria zaragoza zaragoza lleida
+          salamanca avila segovia madrid guadalajara teruel tarragona tarragona
+          caceres caceres toledo madrid cuenca teruel castellon-de-la-plana         palma-de-mallorca
+          badajoz badajoz ciudad-real ciudad-real albacete albacete valencia
+          badajoz cordoba cordoba jaen jaen murcia
+          huelva sevilla cordoba granada almeria
+              cadiz malaga
 
-$santa-cruz-de-tenerife$las-palmas-de-gran-canaria
+ santa-cruz-de-tenerife las-palmas-de-gran-canaria

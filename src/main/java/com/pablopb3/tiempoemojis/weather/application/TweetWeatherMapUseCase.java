@@ -30,7 +30,7 @@ public class TweetWeatherMapUseCase {
         this.twitterApiClient = twitterApiClient;
     }
 
-    public void getWeather() throws Exception {
+    public void tweetWeather() throws Exception {
 
         List<WeatherByCity> weatherByCity = weatherService.getWeather();
         String citiesMap = templateReader.readTemplate();
