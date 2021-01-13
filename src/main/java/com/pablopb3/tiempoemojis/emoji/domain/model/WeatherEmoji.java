@@ -9,9 +9,9 @@ public enum WeatherEmoji {
     SUN_WITH_MEDIUM_CLOUD("\u26c5"),
     SUN_WITH_BIG_CLOUD("\uD83C\uDF25"),
     SUN_WITH_BIG_CLOUD_AND_RAIN("\uD83C\uDF26️"),
-    GREY_CLOUDS("️\u2601"),
+    GREY_CLOUDS("️☁"),
     RAINY_CLOUDS("\uD83C\uDF27"),
-    STORMY_CLOUDS("️\uD83C\uDF29️"),
+    STORMY_CLOUDS("\uD83C\uDF29️️"),
     RAINY_STORMY_CLOUDS("\u26c8"),
     SNOWY_CLOUD("\uD83C\uDF28"),
     QUESTION_MARK("❓");

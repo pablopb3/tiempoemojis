@@ -1,15 +1,15 @@
 package com.pablopb3.tiempoemojis.weather.domain.model;
 
-public class WeatherByCity {
+public class WeatherByLocation {
 
     private String name;
-    private String cityCode;
+    private String locationCode;
     private Coordinates coordinates;
     private WeatherDescription weatherDescription;
 
-    public WeatherByCity(String name, String cityCode, Coordinates coordinates, WeatherDescription weatherDescription) {
+    public WeatherByLocation(String name, String locationCode, Coordinates coordinates, WeatherDescription weatherDescription) {
         this.name = name;
-        this.cityCode = cityCode;
+        this.locationCode = locationCode;
         this.coordinates = coordinates;
         this.weatherDescription = weatherDescription;
     }
@@ -18,8 +18,8 @@ public class WeatherByCity {
         return name;
     }
 
-    public String getCityCode() {
-        return cityCode;
+    public String getLocationCode() {
+        return locationCode;
     }
 
     public Coordinates getCoordinates() {
@@ -34,7 +34,7 @@ public class WeatherByCity {
     public String toString() {
         return "WeatherByCity{" +
                 "name='" + name + '\'' +
-                "cityCode='" + cityCode + '\'' +
+                "cityCode='" + locationCode + '\'' +
                 ", coordinates=" + coordinates +
                 ", weatherDescription=" + weatherDescription +
                 '}';

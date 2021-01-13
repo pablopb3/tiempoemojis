@@ -17,8 +17,18 @@ class TemplateReaderTest {
     }
 
     @Test
-    public void read() throws Exception {
-        log.info(templateReader.readTemplate());
+    public void readSpainTemplate() throws Exception {
+        log.info(templateReader.readSpainTemplate());
+    }
+
+    @Test
+    public void readGaliciaTemplate() throws Exception {
+        log.info(templateReader.readGaliciaTemplate());
+    }
+
+    @Test
+    public void getAllGalicianMunicipalitesFromMap() throws Exception {
+        log.info(templateReader.getAllGalicianMunicipalities().toString());
     }
 
 }

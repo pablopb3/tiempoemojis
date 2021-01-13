@@ -1,12 +1,11 @@
 package com.pablopb3.tiempoemojis.weather.domain.service;
 
-import com.pablopb3.tiempoemojis.weather.domain.model.WeatherByCity;
+import com.pablopb3.tiempoemojis.weather.domain.model.WeatherByLocation;
 
 import java.util.List;
 
 public interface WeatherService {
 
-    List<WeatherByCity> getWeather();
+    List<WeatherByLocation> getWeather();
 
-    String replaceCityCodeByWeatherEmoji(String map, List<WeatherByCity> weatherByCity);
 }

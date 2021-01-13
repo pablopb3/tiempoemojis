@@ -1,43 +1,42 @@
 package com.pablopb3.tiempoemojis.weather.application;
 
-import com.pablopb3.tiempoemojis.weather.domain.model.WeatherByCity;
+import com.pablopb3.tiempoemojis.weather.domain.model.WeatherByLocation;
+import com.pablopb3.tiempoemojis.weather.domain.service.MapService;
 import com.pablopb3.tiempoemojis.weather.domain.service.WeatherService;
 import com.pablopb3.tiempoemojis.weather.infrastructure.io.service.TemplateReader;
-import com.pablopb3.tiempoemojis.weather.infrastructure.twitter.service.TwitterApiClient;
+import com.pablopb3.tiempoemojis.weather.infrastructure.twitter.domain.service.TwitterApiClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class TweetWeatherMapUseCase {
+public abstract class TweetWeatherMapUseCase {
 
     private Logger log = LoggerFactory.getLogger(TweetWeatherMapUseCase.class);
 
     private WeatherService weatherService;
     private TemplateReader templateReader;
+    private MapService mapService;
     private TwitterApiClient twitterApiClient;
 
     public TweetWeatherMapUseCase(
             TemplateReader templateReader,
-            @Qualifier("elTiempoPuntoEsWeatherService") WeatherService weatherService,
+            MapService mapService,
+            WeatherService weatherService,
             TwitterApiClient twitterApiClient
     ) {
         this.templateReader = templateReader;
+        this.mapService = mapService;
         this.weatherService = weatherService;
         this.twitterApiClient = twitterApiClient;
     }
 
-    @Scheduled(cron = "0 0 2,6,10,14,18,22 * * ?")
     public void tweetWeather() throws Exception {
 
-        List<WeatherByCity> weatherByCity = weatherService.getWeather();
-        String citiesMap = templateReader.readTemplate();
-        String weatherMap = weatherService.replaceCityCodeByWeatherEmoji(citiesMap, weatherByCity);
-        log.info("let's tweet the weather map: \n" + weatherMap);
+        List<WeatherByLocation> weatherByLocation = weatherService.getWeather();
+        String citiesMap = templateReader.readSpainTemplate();
+        String weatherMap = mapService.replaceLocationsCodeByWeatherEmoji(citiesMap, weatherByLocation, " ");
+        log.info("let's tweet the weather map for Spain: \n" + weatherMap);
         twitterApiClient.tweet(weatherMap);
     }
 
