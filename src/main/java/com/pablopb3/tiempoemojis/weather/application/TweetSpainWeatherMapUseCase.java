@@ -1,5 +1,6 @@
 package com.pablopb3.tiempoemojis.weather.application;
 
+import com.pablopb3.tiempoemojis.weather.domain.model.WeatherByLocation;
 import com.pablopb3.tiempoemojis.weather.domain.service.MapService;
 import com.pablopb3.tiempoemojis.weather.domain.service.WeatherService;
 import com.pablopb3.tiempoemojis.weather.infrastructure.io.service.TemplateReader;
@@ -9,6 +10,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class TweetSpainWeatherMapUseCase extends TweetWeatherMapUseCase {
@@ -26,7 +29,12 @@ public class TweetSpainWeatherMapUseCase extends TweetWeatherMapUseCase {
 
     @Scheduled(cron = "0 0 2,6,10,14,18,22 * * ?")
     public void tweetWeather() throws Exception {
-        super.tweetWeather();
+
+        List<WeatherByLocation> weatherByLocation = weatherService.getWeather();
+        String citiesMap = templateReader.readSpainTemplate();
+        String weatherMap = mapService.replaceLocationsCodeByWeatherEmoji(citiesMap, weatherByLocation, " ");
+        log.info("let's tweet the weather map for Spain: \n" + weatherMap);
+        twitterApiClient.tweet(weatherMap);
     }
 
 }

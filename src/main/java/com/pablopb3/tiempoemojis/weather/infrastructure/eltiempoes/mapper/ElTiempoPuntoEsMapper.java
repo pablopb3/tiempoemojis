@@ -41,6 +41,7 @@ public class ElTiempoPuntoEsMapper {
     public static WeatherDescription getWeatherDescritpionForMunicipality(String status) {
         MomentOfDay momentOfDay = status.contains("n") ? MomentOfDay.NIGHT : MomentOfDay.DAY;
         char[] chars = status.toCharArray();
+        if(chars[0] == '8') { chars = "16".toCharArray(); }
         Intensity cloudsIntensity = ElTiempoPuntoEsIntensity.getCloudsIntensityForMunicipality(Character.getNumericValue(chars[1]));
         Intensity rainIntensity = ElTiempoPuntoEsIntensity.getRainIntensityForMunicipality(Character.getNumericValue(chars[0]));
         Intensity snowIntensity = ElTiempoPuntoEsIntensity.getSnowIntensityForMunicipality(Character.getNumericValue(chars[0]));

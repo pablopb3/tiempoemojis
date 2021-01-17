@@ -8,6 +8,7 @@ import com.pablopb3.tiempoemojis.weather.infrastructure.eltiempoes.model.ElTiemp
 import com.pablopb3.tiempoemojis.weather.infrastructure.io.service.TemplateReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -37,6 +38,7 @@ public class ElTiempoPuntoEsGaliciaWeatherService implements WeatherService {
         this.templateReader = templateReader;
     }
 
+    @Cacheable
     public List<WeatherByLocation> getWeather() {
         List<ElTiempoPuntoEsMunicipality> galicianMunicipalitiesRetrieved = getGalicianMunicipalitiesNeeded();
         List<ElTiempoPuntoEsMunicipalityWithWeather> galicianMunicipalitiesWithWeather = elTiempoPuntoEsWeatherService.getGaliciaWeather(galicianMunicipalitiesRetrieved);

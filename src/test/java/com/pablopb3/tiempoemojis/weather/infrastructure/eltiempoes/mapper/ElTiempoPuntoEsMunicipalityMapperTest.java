@@ -57,4 +57,12 @@ class ElTiempoPuntoEsMunicipalityMapperTest {
         );
     }
 
+    @Test
+    public void mapFoggyDay() {
+        isTrue(
+                ElTiempoPuntoEsMapper.getWeatherDescritpionForMunicipality("82")
+                        .equals(new WeatherDescription(MomentOfDay.DAY, Intensity.VERY_HIGH, Intensity.NONE, Intensity.NONE))
+        );
+    }
+
 }

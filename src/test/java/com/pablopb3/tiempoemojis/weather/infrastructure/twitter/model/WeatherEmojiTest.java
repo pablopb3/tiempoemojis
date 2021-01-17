@@ -12,7 +12,7 @@ class WeatherEmojiTest {
     @Test
     void logEmojisNumberOfCharacters() {
         for(WeatherEmoji emoji : WeatherEmoji.values()) {
-            log.info(emoji.name()  + ": " + emoji.getEmojiCode().length());
+            log.info(emoji.name()  + " - chars: " + emoji.getEmojiCode().length() + " bytes:" + ("  " + emoji.getEmojiCode() + emoji.getEmojiCode() + emoji.getEmojiCode() + "\n").getBytes().length);
         }
     }
 
