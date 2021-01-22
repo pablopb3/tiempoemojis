@@ -23,6 +23,12 @@ class WeatherEmojiMapperTest {
     }
 
     @Test
+    void emojiMapperRainyNight() {
+        WeatherDescription rainyNight = new WeatherDescription(MomentOfDay.NIGHT, Intensity.LOW, Intensity.LOW, Intensity.NONE);
+        Assertions.assertTrue(WeatherEmojiMapper.getEmojiFromDescription(rainyNight).equals(WeatherEmoji.RAINY_CLOUDS));
+    }
+
+    @Test
     void emojiMapperStormySky() {
         WeatherDescription stormySky = new WeatherDescription(MomentOfDay.NIGHT, Intensity.VERY_HIGH, Intensity.VERY_HIGH, Intensity.NONE);
         Assertions.assertTrue(WeatherEmojiMapper.getEmojiFromDescription(stormySky).equals(WeatherEmoji.STORMY_CLOUDS));
@@ -45,4 +51,5 @@ class WeatherEmojiMapperTest {
         WeatherDescription stormySky = new WeatherDescription(MomentOfDay.DAY, Intensity.LOW, Intensity.LOW, Intensity.NONE);
         Assertions.assertTrue(WeatherEmojiMapper.getEmojiFromDescription(stormySky).equals(WeatherEmoji.SUN_WITH_BIG_CLOUD_AND_RAIN));
     }
+
 }

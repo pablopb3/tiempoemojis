@@ -10,7 +10,6 @@ import org.slf4j.LoggerFactory;
 import twitter4j.TwitterException;
 
 import java.io.IOException;
-import java.net.URLEncoder;
 import java.util.Arrays;
 import java.util.List;
 
@@ -51,11 +50,9 @@ class TweetsLengthTest {
         }
         galicianMap = galicianMap.replace("      ;a guarda           ;lobios;baltar;verín;riós", "      "+symbol+"           "+
                 symbol+symbol+symbol+symbol);
-        log.info("chars: " + String.valueOf(galicianMap.length()));
+        log.info("chars: " + galicianMap.length());
         log.info("chars: " + galicianMap.chars().summaryStatistics().toString());
-        log.info("chars encoded: " + String.valueOf(URLEncoder.encode(galicianMap).length()));
         log.info("bytes: " + String.valueOf(galicianMap.getBytes()).length());
-        log.info("bytes encoded: " + String.valueOf(URLEncoder.encode(galicianMap).getBytes()).length());
         log.info(galicianMap);
 
         twitterApiClient.tweet(galicianMap);

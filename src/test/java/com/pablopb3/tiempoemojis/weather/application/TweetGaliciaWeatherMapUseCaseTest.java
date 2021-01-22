@@ -6,7 +6,8 @@ import com.pablopb3.tiempoemojis.weather.infrastructure.eltiempoes.service.ElTie
 import com.pablopb3.tiempoemojis.weather.infrastructure.eltiempoes.service.ElTiempoPuntoEsMunicipalitiesService;
 import com.pablopb3.tiempoemojis.weather.infrastructure.eltiempoes.service.ElTiempoPuntoEsWeatherService;
 import com.pablopb3.tiempoemojis.weather.infrastructure.io.service.TemplateReader;
-import com.pablopb3.tiempoemojis.weather.infrastructure.twitter.domain.service.TwitterApiClientGalicia;
+import com.pablopb3.tiempoemojis.weather.infrastructure.twitter.domain.service.TwitterApiClient;
+import com.pablopb3.tiempoemojis.weather.infrastructure.twitter.domain.service.TwitterApiClientTesting;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.web.client.RestTemplate;
@@ -24,8 +25,8 @@ class TweetGaliciaWeatherMapUseCaseTest {
         TemplateReader templateReader = new TemplateReader();
         MapService mapService = new MapService();
         ElTiempoPuntoEsGaliciaWeatherService elTiempoPuntoEsGaliciaWeatherService = new ElTiempoPuntoEsGaliciaWeatherService(elTiempoPuntoEsMunicipalitiesService, elTiempoPuntoEsWeatherService, templateReader);
-        TwitterApiClientGalicia twitterApiClientGalicia = new TwitterApiClientGalicia();
-        tweetGaliciaWeatherMapUseCase = new TweetGaliciaWeatherMapUseCase(templateReader, mapService, elTiempoPuntoEsGaliciaWeatherService, twitterApiClientGalicia);
+        TwitterApiClient twitterApiClientTesting = new TwitterApiClientTesting();
+        tweetGaliciaWeatherMapUseCase = new TweetGaliciaWeatherMapUseCase(templateReader, mapService, elTiempoPuntoEsGaliciaWeatherService, twitterApiClientTesting);
     }
 
     @Test

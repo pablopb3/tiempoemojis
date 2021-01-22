@@ -6,7 +6,7 @@ import com.pablopb3.tiempoemojis.weather.infrastructure.eltiempoes.service.ElTie
 import com.pablopb3.tiempoemojis.weather.infrastructure.eltiempoes.service.ElTiempoPuntoEsWeatherService;
 import com.pablopb3.tiempoemojis.weather.infrastructure.io.service.TemplateReader;
 import com.pablopb3.tiempoemojis.weather.infrastructure.twitter.domain.service.TwitterApiClient;
-import com.pablopb3.tiempoemojis.weather.infrastructure.twitter.domain.service.TwitterApiClientSpain;
+import com.pablopb3.tiempoemojis.weather.infrastructure.twitter.domain.service.TwitterApiClientTesting;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.web.client.RestTemplate;
@@ -23,8 +23,8 @@ class TweetSpainWeatherMapUseCaseTest {
         ElTiempoPuntoEsSpainWeatherService elTiempoPuntoEsSpainWeatherService = new ElTiempoPuntoEsSpainWeatherService(elTiempoPuntoEsWeatherService);
         TemplateReader templateReader = new TemplateReader();
         MapService mapService = new MapService();
-        TwitterApiClient twitterApiClient = new TwitterApiClientSpain();
-        tweetSpainWeatherMapUseCase = new TweetSpainWeatherMapUseCase(templateReader, mapService, elTiempoPuntoEsSpainWeatherService, twitterApiClient);
+        TwitterApiClient twitterApiClientTesting = new TwitterApiClientTesting();
+        tweetSpainWeatherMapUseCase = new TweetSpainWeatherMapUseCase(templateReader, mapService, elTiempoPuntoEsSpainWeatherService, twitterApiClientTesting);
     }
 
     @Test
