@@ -31,7 +31,7 @@ class TweetsLengthTest {
     @Test
     void tweetTest() throws TwitterException, IOException {
 
-        String symbol = WeatherEmoji.GREY_CLOUDS.getEmojiCode();
+        String symbol = WeatherEmoji.RAINY_STORMY_CLOUDS.getEmojiCode();
 
         String galicianMap = templateReader.readGaliciaTemplate();
 

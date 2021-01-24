@@ -1,6 +1,6 @@
 package com.pablopb3.tiempoemojis.weather.domain.service;
 
-import com.pablopb3.tiempoemojis.emoji.domain.service.mapper.WeatherEmojiMapper;
+import com.pablopb3.tiempoemojis.emoji.domain.model.WeatherEmoji;
 import com.pablopb3.tiempoemojis.weather.domain.model.WeatherByLocation;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +14,7 @@ public class MapService {
         var replacedMap = new Object() { String value = map; };
         weatherByLocation.forEach(c -> {
             if (map.contains(c.getLocationCode().toLowerCase(Locale.ROOT))) {
-                replacedMap.value = replacedMap.value.replace(locationsSeparator + c.getLocationCode().toLowerCase(Locale.ROOT), WeatherEmojiMapper.getEmojiFromDescription(c.getWeatherDescription()).getEmojiCode());
+                replacedMap.value = replacedMap.value.replace(locationsSeparator + c.getLocationCode().toLowerCase(Locale.ROOT), WeatherEmoji.getEmojiForWeather(c.getWeatherDescription()).getEmojiCode());
             }
         });
         return replacedMap.value;

@@ -30,7 +30,7 @@ public class WeatherDescription {
 
     public boolean isTherePrecipitations() { return isItRainy() || isStorming() || isSnowing(); }
 
-    public boolean isItRainy() { return rainLevel.equals(Intensity.LOW) || rainLevel.equals(Intensity.MEDIUM); }
+    public boolean isItRainy() { return rainLevel.equals(Intensity.LOW) || rainLevel.equals(Intensity.MEDIUM) || rainLevel.equals(Intensity.HIGH); }
 
     public boolean isStorming() { return rainLevel.equals(Intensity.VERY_HIGH); }
 
