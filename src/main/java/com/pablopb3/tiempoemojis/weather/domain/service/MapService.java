@@ -10,11 +10,11 @@ import java.util.Locale;
 @Service
 public class MapService {
 
-    public String replaceLocationsCodeByWeatherEmoji(String map, List<WeatherByLocation> weatherByLocation, String locationsSeparator) {
+    public String replaceLocationsCodeByWeatherEmoji(String map, List<WeatherByLocation> weatherByLocation, String locationsSeparator, boolean includeLunarPhases) {
         var replacedMap = new Object() { String value = map; };
         weatherByLocation.forEach(c -> {
             if (map.contains(c.getLocationCode().toLowerCase(Locale.ROOT))) {
-                replacedMap.value = replacedMap.value.replace(locationsSeparator + c.getLocationCode().toLowerCase(Locale.ROOT), WeatherEmoji.getEmojiForWeather(c.getWeatherDescription()).getEmojiCode());
+                replacedMap.value = replacedMap.value.replace(locationsSeparator + c.getLocationCode().toLowerCase(Locale.ROOT), WeatherEmoji.getEmojiForWeather(c.getWeatherDescription(), includeLunarPhases).getEmojiCode());
             }
         });
         return replacedMap.value;

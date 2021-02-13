@@ -5,9 +5,9 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-class WeatherEmojiTest {
+class WeatherEmojiLengthTest {
 
-    private static Logger log = LoggerFactory.getLogger(WeatherEmojiTest.class);
+    private static Logger log = LoggerFactory.getLogger(WeatherEmojiLengthTest.class);
 
     @Test
     void logEmojisNumberOfCharacters() {

@@ -14,27 +14,26 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class TweetSpainWeatherMapUseCase extends TweetWeatherMapUseCase {
+public class TweetGaliciaWeatherMapInTestAccountUseCase extends TweetWeatherMapUseCase {
 
-    private Logger log = LoggerFactory.getLogger(TweetSpainWeatherMapUseCase.class);
+    private Logger log = LoggerFactory.getLogger(TweetGaliciaWeatherMapInTestAccountUseCase.class);
 
-    public TweetSpainWeatherMapUseCase(
+    public TweetGaliciaWeatherMapInTestAccountUseCase(
             TemplateReader templateReader,
             MapService mapService,
-            @Qualifier("elTiempoPuntoEsSpainWeatherService") WeatherService weatherService,
-            @Qualifier("twitterApiClientSpain") TwitterApiClient twitterApiClient
+            @Qualifier("elTiempoPuntoEsGaliciaWeatherService") WeatherService weatherService,
+            @Qualifier("twitterApiClientTesting") TwitterApiClient twitterApiClient
     ) {
         super(templateReader, mapService, weatherService, twitterApiClient);
     }
 
-    @Scheduled(cron = "0 0 2,6,10,14,18,22 * * ?")
+    @Scheduled(cron = "0 3 2,6,10,14,18,22 * * ?")
     public void tweetWeather() throws Exception {
 
         List<WeatherByLocation> weatherByLocation = weatherService.getWeather();
-        String citiesMap = templateReader.readSpainTemplate();
-        String weatherMap = mapService.replaceLocationsCodeByWeatherEmoji(citiesMap, weatherByLocation, " ", false);
-        log.info("let's tweet the weather map for Spain: \n" + weatherMap);
+        String citiesMap = templateReader.readGaliciaTemplate();
+        String weatherMap = mapService.replaceLocationsCodeByWeatherEmoji(citiesMap, weatherByLocation, ";", true);
+        log.info("let's tweet the weather map for Galicia: \n" + weatherMap);
         twitterApiClient.tweet(weatherMap);
     }
-
 }
