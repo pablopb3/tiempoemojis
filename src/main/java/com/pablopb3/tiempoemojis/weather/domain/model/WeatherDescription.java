@@ -36,6 +36,9 @@ public class WeatherDescription {
 
     public boolean isSnowing() { return !snowLevel.equals(Intensity.NONE); }
 
+    public MomentOfDay getMomentOfDay() { return momentOfDay; }
+
+    public void setMomentOfDay(MomentOfDay momentOfDay) { this.momentOfDay = momentOfDay; }
     @Override
     public String toString() {
         return "WeatherDescription{" +

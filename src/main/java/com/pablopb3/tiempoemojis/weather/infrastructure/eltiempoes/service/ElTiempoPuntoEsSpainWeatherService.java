@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static com.pablopb3.tiempoemojis.weather.domain.model.MomentOfDay.assureDayTimeConsistency;
+
 @Service
 public class ElTiempoPuntoEsSpainWeatherService implements WeatherService {
 
@@ -24,7 +26,8 @@ public class ElTiempoPuntoEsSpainWeatherService implements WeatherService {
 
     public List<WeatherByLocation> getWeather() {
         List<ElTiempoPuntoEsCityWeather> elTiempoWeather = elTiempoPuntoEsWeatherService.getSpainWeather();
-        return elTiempoWeather.stream().map(e -> ElTiempoPuntoEsMapper.map(e)).collect(Collectors.toList());
+        List<WeatherByLocation> weatherByLocation = elTiempoWeather.stream().map(e -> ElTiempoPuntoEsMapper.map(e)).collect(Collectors.toList());
+        return assureDayTimeConsistency(weatherByLocation);
     }
 
 }

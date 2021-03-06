@@ -19,6 +19,7 @@ public class LunarPhasesService {
     private static Logger log = LoggerFactory.getLogger(LunarPhasesService.class);
 
     //todo: cache this function
+    //todo: add ilumination % from MoonIlumination class
     public LunarPhase getCurrentMoonPhase() {
         Map<MoonPhase.Phase, Date> nextMoonPhasesTimes = getNextMoonPhasesTimes();
         Map.Entry<MoonPhase.Phase, Date> previousMoonPhaseWithTime = getThePrevious(nextMoonPhasesTimes);

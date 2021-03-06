@@ -17,6 +17,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.stream.Collectors;
 
+import static com.pablopb3.tiempoemojis.weather.domain.model.MomentOfDay.assureDayTimeConsistency;
+
 @Service
 public class ElTiempoPuntoEsGaliciaWeatherService implements WeatherService {
 
@@ -42,7 +44,8 @@ public class ElTiempoPuntoEsGaliciaWeatherService implements WeatherService {
     public List<WeatherByLocation> getWeather() {
         List<ElTiempoPuntoEsMunicipality> galicianMunicipalitiesRetrieved = getGalicianMunicipalitiesNeeded();
         List<ElTiempoPuntoEsMunicipalityWithWeather> galicianMunicipalitiesWithWeather = elTiempoPuntoEsWeatherService.getGaliciaWeather(galicianMunicipalitiesRetrieved);
-        return galicianMunicipalitiesWithWeather.stream().map(e -> ElTiempoPuntoEsMapper.map(e)).collect(Collectors.toList());
+        List<WeatherByLocation> weatherByLocation = galicianMunicipalitiesWithWeather.stream().map(e -> ElTiempoPuntoEsMapper.map(e)).collect(Collectors.toList());
+        return assureDayTimeConsistency(weatherByLocation);
     }
 
     public List<ElTiempoPuntoEsMunicipality> getGalicianMunicipalitiesNeeded() {
