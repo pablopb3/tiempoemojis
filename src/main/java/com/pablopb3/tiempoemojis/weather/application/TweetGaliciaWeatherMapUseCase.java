@@ -32,7 +32,7 @@ public class TweetGaliciaWeatherMapUseCase extends TweetWeatherMapUseCase {
 
         List<WeatherByLocation> weatherByLocation = weatherService.getWeather();
         String citiesMap = templateReader.readGaliciaTemplate();
-        String weatherMap = mapService.replaceLocationsCodeByWeatherEmoji(citiesMap, weatherByLocation, ";", false);
+        String weatherMap = mapService.replaceLocationsCodeByWeatherEmoji(citiesMap, weatherByLocation, ";", true);
         log.info("let's tweet the weather map for Galicia: \n" + weatherMap);
         twitterApiClient.tweet(weatherMap);
     }
